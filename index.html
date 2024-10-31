@@ -1,0 +1,897 @@
+<!DOCTYPE html><html><head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><a id="article_top" href=""></a></p>
+<h1 id="agenda">Agenda </h1>
+<ul>
+<li>IDE 開發工具的安裝&amp;介紹
+<ul>
+<li>CS+ , e² studio , CCRH , CCRL , Smart Configurator , Renesas Flash programmer</li>
+</ul>
+</li>
+<li>Smart Configurator
+<ul>
+<li><a href="#article_clock">Clock tree , Pin configuration , Peripheral configuration</a></li>
+<li><a href="#article_timer">Timer</a></li>
+<li><a href="#article_gpio">GPIO</a></li>
+<li><a href="#article_ext">external pin interrupt</a></li>
+<li><a href="#article_i2c">I2C</a></li>
+<li><a href="#article_spi">SPI</a></li>
+<li><a href="#article_uart">UART</a></li>
+<li><a href="#article_pwm">PWM</a></li>
+<li><a href="#article_adc">ADC</a></li>
+</ul>
+</li>
+<li>CS+
+<ul>
+<li>Code Compiler &amp; programming flow ( from C code to IC ).</li>
+</ul>
+</li>
+<li>Tips</li>
+</ul>
+<hr>
+<h1 id="ide--debug-tool">IDE &amp; Debug tool </h1>
+<p><a href="https://www.renesas.com/us/en/software-tool/e2-emulator-rte0t00020kce00000r">Debug &amp; programmer - E2 emulator</a></p>
+<p><a href="https://www.renesas.com/us/en/software-tool/e2-emulator-lite-rte0t0002lkce00000r">Debug &amp; programmer - E2 emulator lite for RL78</a></p>
+<p><a href="https://www.renesas.com/en/software-tool/cs">IDE – CS+ , suggest for automotive product</a></p>
+<p><a href="https://www.renesas.com/en/software-tool/e-studio">IDE – e² studio</a></p>
+<p><img src="img/slide_extend_RH8500.png" alt=""></p>
+<p><img src="img/slide_extend_RH8501.png" alt=""></p>
+<hr>
+<h1 id="user-manual--cs">User manual : CS+ </h1>
+<p><a href="https://www.renesas.com/en/software-tool/cs">CS+ User’s Manual</a></p>
+<p><img src="img/slide_extend_RH8502.png" alt=""></p>
+<p><img src="img/slide_extend_RH8503.png" alt=""></p>
+<p><u>Integrated Development Environment User's Manual: RH850 Debug Tool</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="user-manual--e2-studio">User manual : e² studio </h1>
+<p><a href="https://www.renesas.com/en/software-tool/e-studio">e² studio User’s Manual</a></p>
+<p><img src="img/slide_extend_RH8504.png" alt=""></p>
+<p><img src="img/slide_extend_RH8505.png" alt=""></p>
+<hr>
+<h1 id="compiler--cc-rh-for-rh850">Compiler : CC-RH for RH850 </h1>
+<p><a href="https://www.renesas.com/en/software-tool/c-compiler-package-rh850-family">Compiler – C Compiler Package for RH850 Family [CC-RH] </a></p>
+<p>*<strong>Base on selected IDE , install the related compiler ( RH850 Compiler CC-RH for CS+ or for e² studio)</strong></p>
+<p><a href="https://www.renesas.com/en/software-tool/compiler-licenses">Compiler Licenses</a></p>
+<p><img src="img/slide_extend_RH8506.png" alt=""></p>
+<p><img src="img/slide_extend_RH8507.png" alt=""></p>
+<hr>
+<h1 id="user-manual--cc-rh-for-rh850">User manual : CC-RH for RH850 </h1>
+<p><a href="https://www.renesas.com/en/software-tool/c-compiler-package-rh850-family">Compiler CC-RH User’s Manual</a></p>
+<p><img src="img/slide_extend_RH8508.png" alt=""></p>
+<p><img src="img/slide_extend_RH8509.png" alt=""></p>
+<hr>
+<h1 id="smart-configurator-main-window">Smart Configurator main window </h1>
+<p><a href="https://www.renesas.com/en/software-tool/smart-configurator">IDE plug in  – Smart Configurator</a></p>
+<p>*<strong>Base on selected IDE , install the related Smart Configurator</strong></p>
+<p><a href="https://www.renesas.com/en/software-tool/rh850-smart-configurator">https://www.renesas.com/en/software-tool/rh850-smart-configurator</a></p>
+<p><img src="img/slide_extend_RH85014.png" alt=""></p>
+<hr>
+<h1 id="renesas-flash-programmer">Renesas Flash Programmer </h1>
+<p><a href="https://www.renesas.com/en/software-tool/renesas-flash-programmer-programming-gui">Renesas Flash Programmer (Programming GUI)</a></p>
+<p><img src="img/slide_extend_RH85015.png" alt=""></p>
+<p><img src="img/slide_extend_RH85016.png" alt=""></p>
+<hr>
+<h1 id="create-project-by-cs-rh850">Create project by CS+ (RH850) </h1>
+<p><img src="img/slide_extend_RH85018.png" alt=""></p>
+<p><img src="img/slide_extend_RH85017.png" alt=""></p>
+<p><u>Integrated Development Environment User's Manual: Project Operation</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="cs-rh850--main-window">CS+ (RH850) : main window </h1>
+<p><img src="img/slide_extend_RH85019.png" alt=""></p>
+<hr>
+<h1 id="cs-rh850--open-smart-configurator">CS+ (RH850) : open smart configurator </h1>
+<p><img src="img/slide_extend_RH85020.png" alt=""></p>
+<span style="color:#FF0000">
+Open smart configurator from IDE (CS+)<br><br> 
+</span>
+<p><img src="img/slide_extend_RH85021.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<u>Smart Configurator User's Manual: RH850 API Reference</u><br>
+<u>Smart Configurator Guide on Sample Projects for RH850/F1KM Devices</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="cs-rh850--cc-rh-options">CS+ (RH850) – CC-RH options </h1>
+<p><img src="img/slide_extend_RH85022.png" alt=""></p>
+<p><img src="img/slide_extend_RH85023.png" alt=""></p>
+<p><u>Integrated Development Environment User's Manual: RH850 Debug Tool</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="cs-rh850--debug-tool-options">CS+ (RH850) – Debug Tool options </h1>
+<span style="color:#FF0000">
+Select Debug Tool<br><br>
+</span>
+<p><img src="img/slide_extend_RH85024.png" alt=""></p>
+<p><img src="img/slide_extend_RH85025.png" alt=""></p>
+<p><u>Integrated Development Environment User's Manual: RH850 Debug Tool</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--main-window-rh850">Smart Config. : main window (RH850) </h1>
+<p><img src="img/slide_extend_RH85026.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_clock" href=""></a></p>
+<h1 id="smart-config---clock">Smart Config. - Clock </h1>
+<p><img src="img/slide_extend_RH85027.png" alt=""></p>
+<span style="color:#FF0000">
+Select clock for PLL0 , PLL1<br><br> 
+</span>
+<p><img src="img/slide_extend_RH85029.png" alt=""></p>
+<p><img src="img/slide_extend_RH85028.png" alt=""></p>
+<p><img src="img/slide_extend_RH85030.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85031.png" alt=""></p>
+<span style="color:#FF0000">
+use MainOSC (external osc) will enable X1 , X2 pin<br><br>
+</span> 
+<p><img src="img/slide_extend_RH85032.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--add-component">Smart Config. : add component </h1>
+<p><img src="img/slide_extend_RH85033.png" alt=""></p>
+<p><img src="img/slide_extend_RH85034.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_timer" href=""></a></p>
+<h1 id="smart-config--interval-timer">Smart Config. – Interval Timer </h1>
+<p><img src="img/slide_extend_RH85036.png" alt=""></p>
+<p><img src="img/slide_extend_RH85035.png" alt=""></p>
+<p><img src="img/slide_extend_RH85037.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+TAUxx timer difference<br><br>
+</span>
+<p><img src="img/slide_extend_RH85038.png" alt=""></p>
+<span style="color:#FF0000">
+TAUxx timer clock source<br><br>
+</span>
+<p><img src="img/slide_extend_RH85039.png" alt=""></p>
+<p><img src="img/slide_extend_RH85040.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85041.png" alt=""></p>
+<p><img src="img/slide_extend_RH85042.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+Press <b>[Generate Code]</b> in Smart config. will automatically generate driver source code under CS+ project<br><br>
+</span> 
+<p><img src="img/slide_extend_RH85044.png" alt=""></p>
+<p><img src="img/slide_extend_RH85043.png" alt=""></p>
+<p><img src="img/slide_extend_RH85045.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+Re-build project , will see the build result is complete without error<br><br>
+</span>
+<p><img src="img/slide_extend_RH85046.png" alt=""></p>
+<p><img src="img/slide_extend_RH85047.png" alt=""></p>
+<span style="color:#FF0000">
+This will be project main code : <br>
+<b>r_cg_main.c</b><br><br>
+</span>
+<p><img src="img/slide_extend_RH85048.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85049.png" alt=""></p>
+<p><img src="img/slide_extend_RH85051.png" alt=""></p>
+<p><img src="img/slide_extend_RH85052.png" alt=""></p>
+<p><img src="img/slide_extend_RH85050.png" alt=""></p>
+<p><img src="img/slide_extend_RH85053.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_TAUJ0_0_Start(); 
+</code></pre><p><img src="img/slide_extend_RH85054.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85055.png" alt=""></p>
+<p><img src="img/slide_extend_RH85056.png" alt=""></p>
+<p><img src="img/slide_extend_RH85059.png" alt=""></p>
+<span style="color:#FF0000">
+Add TIMER interrupt function under <br><br>
+</span>  
+<pre data-role="codeBlock" data-info="" class="language-text"><code>r_Config_TAUJ0_0_interrupt()
+</code></pre><p><img src="img/slide_extend_RH85058.png" alt=""></p>
+<p><img src="img/slide_extend_RH85057.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--timer-delay">Smart Config. : Timer delay </h1>
+<p><img src="img/slide_extend_RH85061.png" alt=""></p>
+<p><img src="img/slide_extend_RH85060.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--generate-code">Smart Config. – Generate code </h1>
+<span style="color:#FF0000">
+[Generate Code] in Smart configurator , will re-generate driver code <b><u>every time</u></b><br><br>
+</span> 
+<p><img src="img/slide_extend_RH85062.png" alt=""></p>
+<p><img src="img/slide_extend_RH85063.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="cs---driver-code">CS+ - driver code </h1>
+<span style="color:#FF0000">
+Put custom application code , variable , declaration , between these 2 comment , will merge into driver code when execute [Generate Code] in Smart config<br><br>
+</span>  
+<p><img src="img/slide_extend_RH85064.png" alt=""></p>
+<p><img src="img/slide_extend_RH85065.png" alt=""></p>
+<p><img src="img/slide_extend_RH85066.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_gpio" href=""></a></p>
+<h1 id="smart-config--gpio">Smart Config. – GPIO </h1>
+<p><img src="img/slide_extend_RH85067.png" alt=""></p>
+<p><img src="img/slide_extend_RH85068.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+Select target GPIO port , to set GPIO input , output<br><br>
+</span>&gt;
+<p><img src="img/slide_extend_RH85069.png" alt=""></p>
+<p><img src="img/slide_extend_RH85070.png" alt=""></p>
+<p><img src="img/slide_extend_RH85071.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85072.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--gpio-output">Smart Config. – GPIO output </h1>
+<p><img src="img/slide_extend_RH85074.png" alt=""></p>
+<p><img src="img/slide_extend_RH85073.png" alt=""></p>
+<p><img src="img/slide_extend_RH85075.png" alt=""></p>
+<p><img src="img/slide_extend_RH85076.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--gpio-input">Smart Config. – GPIO input </h1>
+<p><img src="img/slide_extend_RH85078.png" alt=""></p>
+<p><img src="img/slide_extend_RH85077.png" alt=""></p>
+<p><img src="img/slide_extend_RH85079.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="rh850-f1km-s4-example-code">RH850 F1KM-S4 example code </h1>
+<p>Y-ASK-RH850F1KM-S4-V3</p>
+<p><a href="https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit">https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit</a></p>
+<p>Y-ASK-RH850F1KM-S4-V3 Software Package</p>
+<p><a href="https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&amp;r=1261056">https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&amp;r=1261056</a></p>
+<p><img src="img/slide_extend_RH85080.png" alt=""></p>
+<p><img src="img/slide_extend_RH85081.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_ext" href=""></a></p>
+<h1 id="smart-config--external-int">Smart Config. – external int. </h1>
+<p><img src="img/slide_extend_RH85082.png" alt=""></p>
+<p><img src="img/slide_extend_RH85083.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85084.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85085.png" alt=""></p>
+<p><img src="img/slide_extend_RH85086.png" alt=""></p>
+<span style="color:#FF0000">
+Add code when trigger external interrupt INTP2<br><br>
+</span>
+<p><img src="img/slide_extend_RH85088.png" alt=""></p>
+<p><img src="img/slide_extend_RH85089.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_INTC_INTP2_Start();
+</code></pre><p><img src="img/slide_extend_RH85087.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_i2c" href=""></a></p>
+<h1 id="smart-config--i2c">Smart Config. – I2C </h1>
+<p><img src="img/slide_extend_RH85090.png" alt=""></p>
+<p><img src="img/slide_extend_RH85091.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85092.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85093.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH85094.png" alt=""></p>
+<p><img src="img/slide_extend_RH85095.png" alt=""></p>
+<p><img src="img/slide_extend_RH85096.png" alt=""></p>
+<p><img src="img/slide_extend_RH85097.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_RIIC0_Start();
+</code></pre><p><img src="img/slide_extend_RH85098.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_spi" href=""></a></p>
+<h1 id="smart-config--spi-csig0">Smart Config. – SPI (CSIG0) </h1>
+<p><img src="img/slide_extend_RH85099.png" alt=""></p>
+<p><img src="img/slide_extend_RH850100.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850101.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--cpolcpha">Smart Config. – CPOL/CPHA </h1>
+<ul>
+<li>CPOL :
+<ul>
+<li>0 : clock idle at LOW</li>
+<li>1 : clock idle at HIGH</li>
+</ul>
+</li>
+<li>CPHA :
+<ul>
+<li>0 : 1<sup>st</sup> EDGE</li>
+<li>1 : 2<sup>ND</sup> EDGE</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/slide_extend_RH850118.png" alt=""></p>
+<p><img src="img/slide_extend_RH850119.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">CPOL</th>
+<th style="text-align:center">CPHA</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850102.png" alt=""></p>
+<p><img src="img/slide_extend_RH850103.png" alt=""></p>
+<p><img src="img/slide_extend_RH850104.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_CSIG0_Start();
+</code></pre><p><img src="img/slide_extend_RH850105.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--spi-csih0">Smart Config. – SPI (CSIH0) </h1>
+<p><img src="img/slide_extend_RH850106.png" alt=""></p>
+<p><img src="img/slide_extend_RH850107.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850109.png" alt=""></p>
+<p><img src="img/slide_extend_RH850108.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850110.png" alt=""></p>
+<p><img src="img/slide_extend_RH850111.png" alt=""></p>
+<p><img src="img/slide_extend_RH850112.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_CSIH0_Start();
+</code></pre><p><img src="img/slide_extend_RH850113.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--csig-vs-csih">Smart Config. – CSIG vs CSIH </h1>
+<p><img src="img/slide_extend_RH850115.png" alt=""></p>
+<p><img src="img/slide_extend_RH850116.png" alt=""></p>
+<p><img src="img/slide_extend_RH850114.png" alt=""></p>
+<p><img src="img/slide_extend_RH850117.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_uart" href=""></a></p>
+<h1 id="smart-config--uart0">Smart Config. – UART0 </h1>
+<p><img src="img/slide_extend_RH850120.png" alt=""></p>
+<p><img src="img/slide_extend_RH850121.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850122.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850123.png" alt=""></p>
+<p><img src="img/slide_extend_RH850124.png" alt=""></p>
+<p><img src="img/slide_extend_RH850125.png" alt=""></p>
+<p><img src="img/slide_extend_RH850127.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_UART0_Start();
+</code></pre><p><img src="img/slide_extend_RH850126.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_pwm" href=""></a></p>
+<h1 id="smart-config--pwm">Smart Config. – PWM </h1>
+<p><img src="img/slide_extend_RH850128.png" alt=""></p>
+<p><img src="img/slide_extend_RH850129.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850131.png" alt=""></p>
+<p><img src="img/slide_extend_RH850130.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850132.png" alt=""></p>
+<p><img src="img/slide_extend_RH850134.png" alt=""></p>
+<p><img src="img/slide_extend_RH850133.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850135.png" alt=""></p>
+<p><img src="img/slide_extend_RH850137.png" alt=""></p>
+<p>PWM duty adjust example</p>
+<p><img src="img/slide_extend_RH850136.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_TAUB0_Start();
+</code></pre><p><img src="img/slide_extend_RH850138.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_adc" href=""></a></p>
+<h1 id="smart-config--adc">Smart Config. – ADC </h1>
+<p><img src="img/slide_extend_RH850139.png" alt=""></p>
+<p><img src="img/slide_extend_RH850140.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850141.png" alt=""></p>
+<p><img src="img/slide_extend_RH850142.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--adc-sampling">Smart Config. – ADC sampling </h1>
+<p><img src="img/slide_extend_RH850143.png" alt=""></p>
+<p><img src="img/slide_extend_RH850144.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="smart-config--adc-1">Smart Config. – ADC </h1>
+<p><img src="img/slide_extend_RH850145.png" alt=""></p>
+<p><img src="img/slide_extend_RH850146.png" alt=""></p>
+<p><img src="img/slide_extend_RH850149.png" alt=""></p>
+<p><img src="img/slide_extend_RH850147.png" alt=""></p>
+<span style="color:#FF0000">
+Need to manual add driver start API , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_ADCA0_ScanGroup1_Start();
+</code></pre><p><img src="img/slide_extend_RH850148.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="add-root-path-in-path-edit">Add root path in Path Edit </h1>
+<span style="color:#FF0000">
+After generate driver code , compile project under CS+ , if meet compile error (not open iodefine.h) , save and close CS+ project and re-open<br><br>
+</span>
+<p><img src="img/slide_extend_RH850150.png" alt=""></p>
+<p><img src="img/slide_extend_RH850151.png" alt=""></p>
+<span style="color:#FF0000">
+Check CC-RH (Build Tool) &gt; Common Options &gt; Additional include paths , make sure already include the new add driver path (ex : TAUJ0_0 )<br><br>
+</span>
+<p><img src="img/slide_extend_RH850153.png" alt=""></p>
+<span style="color:#FF0000">
+add root path under project to fix compile error issue<br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>.\
+.
+</code></pre><p><img src="img/slide_extend_RH850152.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="add-main-loop">Add main loop </h1>
+<span style="color:#FF0000">
+Need to manual add main loop , ex : <br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>while(1)
+{
+}
+</code></pre><p><img src="img/slide_extend_RH850154.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+If not add while loop under main code , program will <b>stop</b> at exit in csstart.asm<br><br>
+</span> 
+<p><img src="img/slide_extend_RH850155.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="to-fix-interrupt-not-work-issue">To fix INTERRUPT NOT WORK ISSUE </h1>
+<span style="color:#FF0000">
+Remove [ ; ] , to enable table reference method<br><br>
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>USE_TABLE_REFERENCE_METHOD .set 1
+</code></pre><p><img src="img/slide_extend_RH850156.png" alt=""></p>
+<p><img src="img/slide_extend_RH850157.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+Add [ ; ] , to disable default interrupt<br><br> 
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>;.section "EIINTTBL", const
+;.align 512
+;.dw #_Dummy_EI ; INT0
+;.dw #_Dummy_EI ; INT1
+;.dw #_Dummy_EI ; INT2
+;.rept 512 - 3
+;.dw #_Dummy_EI ; INTn
+;.endm
+</code></pre><p><img src="img/slide_extend_RH850158.png" alt=""></p>
+<p><img src="img/slide_extend_RH850159.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><img src="img/slide_extend_RH850160.png" alt=""></p>
+<span style="color:#FF0000">
+Add [ .const ]<br><br>   
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>mov #__sEIINTTBL.const , r6 
+</code></pre><p><img src="img/slide_extend_RH850161.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</b>]<br><br>
+</span>
+<p><img src="img/slide_extend_RH850162.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<span style="color:#FF0000">
+REMOVE [<b>EIINTTBL</b>] in Section Settings
+1. Select [on Section : EIINTTBL]
+2. Select [Remove]
+</span>
+<p><img src="img/slide_extend_RH850164.png" alt=""></p>
+<span style="color:#FF0000">
+ADD [address 0x200] in Section Settings
+1. Select on [blank in Address]
+2. Select [Add]
+3. Key in [200]<br><br>
+</span>
+<p><img src="img/slide_extend_RH850163.png" alt=""></p>
+<span style="color:#FF0000">
+ADD [<b>EIINTTBL.const</b>] in Section Settings
+1. Select on [blank in Section] (addr : 0x200) 
+2. Select [Add]
+3. Key in [EIINTTBL.const]<br><br>
+</span>
+<p><img src="img/slide_extend_RH850165.png" alt=""></p>
+<span style="color:#FF0000">
+Final section table result<br><br>
+</span>
+<p><img src="img/slide_extend_RH850166.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="cs---entry-debug-mode">CS+ - entry debug mode </h1>
+<span style="color:#FF0000">
+Make sure <u><b>[DISCONNECT]</b></u> CS+ project before REMOVE DEBUGGER tool <br><br>
+</span> 
+<p><img src="img/slide_extend_RH850167.png" alt=""></p>
+<p>download program after rebuild<br>
+<img src="img/slide_extend_RH850170.png" alt=""></p>
+<p>debug function<br>
+<img src="img/slide_extend_RH850168.png" alt=""><br>
+<img src="img/slide_extend_RH850169.png" alt=""><br>
+<img src="img/slide_extend_RH850172.png" alt=""><br>
+<img src="img/slide_extend_RH850173.png" alt=""></p>
+<p><img src="img/slide_extend_RH850171.png" alt=""></p>
+<p><u>Integrated Development Environment User's Manual: RH850 Debug Tool</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="renesas-flash-programmer-1">Renesas Flash Programmer </h1>
+<p><img src="img/slide_extend_RH850174.png" alt=""></p>
+<p><img src="img/slide_extend_RH850176.png" alt=""></p>
+<p><img src="img/slide_extend_RH850175.png" alt=""></p>
+<p><img src="img/slide_extend_RH850177.png" alt=""></p>
+<p><u>Renesas Flash Programmer V*.** Flash memory programming softwareUser's Manual </u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<p><a id="article_tips" href=""></a></p>
+<h1 id="tips--convert-to-hex">Tips : Convert to Hex </h1>
+<p><img src="img/slide_extend_RH850178.png" alt=""></p>
+<p><img src="img/slide_extend_RH850179.png" alt=""></p>
+<hr>
+<h1 id="tips--emulator-power-on-mcu">Tips : Emulator power on MCU </h1>
+<p><img src="img/slide_extend_RH850180.png" alt=""></p>
+<p><img src="img/slide_extend_RH850181.png" alt=""></p>
+<hr>
+<h1 id="tips--set-clock-f1km-s1">Tips : Set CLOCK (F1KM-S1) </h1>
+<p><img src="img/slide_extend_RH850182.png" alt=""></p>
+<p><img src="img/slide_extend_RH850183.png" alt=""></p>
+<hr>
+<h1 id="tips--map-file-display">Tips : map file display </h1>
+<p><img src="img/slide_extend_RH850190.png" alt=""></p>
+<span style="color:#FF0000">
+Function address<br>
+size display<br>
+location assignment<br>
+Code size <br>
+RAM size display<br><br>
+</span>
+<p><img src="img/slide_extend_RH850191.png" alt=""></p>
+<hr>
+<h1 id="tips--section-message-display">Tips : section message display </h1>
+<p><img src="img/slide_extend_RH850192.png" alt=""></p>
+<p>Display section message</p>
+<p><img src="img/slide_extend_RH850193.png" alt=""></p>
+<hr>
+<h1 id="tips--size-display-display-in-output-window">Tips : size display display in output window </h1>
+<p><img src="img/slide_extend_RH850194.png" alt=""></p>
+<p><img src="img/slide_extend_RH850195.png" alt=""></p>
+<hr>
+<h1 id="tips--backup-times-generate-code">Tips : Backup times (generate code) </h1>
+<p><img src="img/slide_extend_RH850196.png" alt=""></p>
+<hr>
+<h1 id="tips--section-define-modify">Tips : section define modify </h1>
+<p><img src="img/slide_extend_RH850197.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--section-define-const">Tips : section define (const) </h1>
+<span style="color:#FF0000">
+ADD [<b>privateData.const</b>] in Section Settings<br>
+1. Select on [.data] in Section<br>
+2. Select [Add]<br>
+3. Key in [<b>privateData.const</b>] <br><br>
+</span>  
+<p><img src="img/slide_extend_RH850198.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">item</th>
+<th style="text-align:center">note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data</td>
+<td style="text-align:center">variables with initial value</td>
+</tr>
+<tr>
+<td style="text-align:center">bss</td>
+<td style="text-align:center">variables with no initial value</td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">program code</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color:#FF0000"><b>const</b></span></td>
+<td style="text-align:center"><span style="color:#FF0000"><b>constant data</b></span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="img/slide_extend_RH850199.png" alt=""></p>
+<p>Code assignment example<br>
+<img src="img/slide_extend_RH850200.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--section-define-data">Tips : section define (data) </h1>
+<span style="color:#FF0000">
+ADD [<b>privateData.data</b>] in Section Settings<br>
+1. Select on [.data] in Section<br>
+2. Select [Add]<br>
+3. Key in [<b>privateData.data</b>] <br><br>
+</span>
+<p><img src="img/slide_extend_RH850201.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">item</th>
+<th style="text-align:center">note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span style="color:#FF0000"><b>data</b></span></td>
+<td style="text-align:center"><span style="color:#FF0000"><b>variables with initial value</b></span></td>
+</tr>
+<tr>
+<td style="text-align:center">bss</td>
+<td style="text-align:center">variables with no initial value</td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">program code</td>
+</tr>
+<tr>
+<td style="text-align:center">const</td>
+<td style="text-align:center">constant data</td>
+</tr>
+</tbody>
+</table>
+<p><img src="img/slide_extend_RH850203.png" alt=""></p>
+<p>Code assignment example<br>
+<img src="img/slide_extend_RH850202.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--section-define-bss">Tips : section define (bss) </h1>
+<span style="color:#FF0000">
+ADD [<b>privateData.bss</b>] in Section Settings<br>
+1. Select on [.bss] in Section<br>
+2. Select [Add]<br>
+3. Key in [<b>privateData.bss</b>] <br><br>
+</span>
+<p><img src="img/slide_extend_RH850204.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">item</th>
+<th style="text-align:center">note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data</td>
+<td style="text-align:center">variables with initial value</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color:#FF0000"><b>bss</b></span></td>
+<td style="text-align:center"><span style="color:#FF0000"><b>variables with no initial value</b></span></td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">program code</td>
+</tr>
+<tr>
+<td style="text-align:center">const</td>
+<td style="text-align:center">constant data</td>
+</tr>
+</tbody>
+</table>
+<p><img src="img/slide_extend_RH850206.png" alt=""></p>
+<p>Code assignment example<br>
+<img src="img/slide_extend_RH850205.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--section-define-not-assigned-address">Tips : section define (not assigned address) </h1>
+<span style="color:#FF0000">
+New add custom define section as below <br>
+Also able to define the address base on application<br><br>
+</span>
+<p><img src="img/slide_extend_RH850207.png" alt=""></p>
+<p>Code assignment example<br>
+<img src="img/slide_extend_RH850208.png" alt=""></p>
+<p>check the address in map file<br>
+<img src="img/slide_extend_RH850209.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--section-define-assigned-address">Tips : section define (assigned address) </h1>
+<span style="color:#FF0000">
+New add custom define section as the capture<br>
+Also able to define the address base on application<br><br>
+</span>
+<p><img src="img/slide_extend_RH850210.png" alt=""></p>
+<p>Code assignment example<br>
+<img src="img/slide_extend_RH850211.png" alt=""></p>
+<p>check the address in map file<br>
+<img src="img/slide_extend_RH850212.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--section-allocation--size">Tips : section allocation , size </h1>
+<p><img src="img/slide_extend_RH850213.png" alt=""></p>
+<p>CC-RH Compiler User's Manual</p>
+<h1 id="tips--project-split">Tips : project split </h1>
+<span style="color:#FF0000">
+Use [<b> Build Mode Setting </b>] , to split different macro in different project setting if necessary<br><br>
+</span>
+<p><img src="img/slide_extend_RH850214.png" alt=""></p>
+<p>Project split example , modify the projec name<br>
+<img src="img/slide_extend_RH850215.png" alt=""></p>
+<p><img src="img/slide_extend_RH850216.png" alt=""></p>
+<p><img src="img/slide_extend_RH850217.png" alt=""></p>
+<p>Add the macro define for extra project<br>
+<img src="img/slide_extend_RH850218.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
