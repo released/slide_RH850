@@ -480,16 +480,20 @@ Select target GPIO port , to set GPIO input , output<br><br>
 # RH850 F1KM-S4 example code
 
 Y-ASK-RH850F1KM-S4-V3
-
 [https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit)
 
 Y-ASK-RH850F1KM-S4-V3 Software Package
-
 [https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&r=1261056](https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&r=1261056)
 
 ![](img/slide_extend_RH85080.png)
 
 ![](img/slide_extend_RH85081.png)
+
+Y-ASK-RH850F1KM-S1-V3
+[https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s1-v3-rh850f1km-s1-starter-kit](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s1-v3-rh850f1km-s1-starter-kit)
+
+Y-ASK-RH850F1KM-S1-V3 Sample Code
+[https://www.renesas.com/en/document/scd/y-ask-rh850f1km-s1-v3-sample-code?r=1261041](https://www.renesas.com/en/document/scd/y-ask-rh850f1km-s1-v3-sample-code?r=1261041)
 
 <u>RH850 Smart Configurator User's Guide: CS+</u>
 [back to top](#article_top)    
