@@ -770,6 +770,15 @@ R_Config_UART0_Start();
 
 ---
 
+# Smart Config. – UART0 printf sample code
+
+[Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
+
+<u>RH850 Smart Configurator User's Guide: CS+</u>
+[back to top](#article_top)    
+
+---
+
 <a id="article_pwm"></a>
 
 # Smart Config. – PWM
@@ -869,7 +878,15 @@ R_Config_TAUB0_Start();
 
 ![](img/slide_extend_RH850149.png)
 
-![](img/slide_extend_RH850147.png)
+![](img/slide_extend_RH850147_1.png)
+
+![](img/slide_extend_RH850147_2.png)
+
+![](img/slide_extend_RH850147_3.png)
+
+![](img/slide_extend_RH850147_4.png)
+
+[Sample_Project_RH850_S1_ADC_MultiCh](https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh)
 
 
 <span style="color:#FF0000">
@@ -878,6 +895,7 @@ Need to manual add driver start API , ex : <br><br>
 
 ```
 R_Config_ADCA0_ScanGroup1_Start();
+R_Config_ADCA0_ScanGroup1_OperationOn();
 ```
 
 ![](img/slide_extend_RH850148.png)
@@ -1358,4 +1376,25 @@ Add the macro define for extra project
 [back to top](#article_top)    
 
 ---
+
+# Tips : add global variable into watch window with real time update
+
+<span style="color:#FF0000">
+enable [<b>Access during the execution</b>] at Debugger Property > Debug Tool Settings tab<br>
+</span>
+
+![](img/RH850_watch_window_update.png)
+
+<span style="color:#FF0000">
+Add global variable into watch window , by [<b>Register to Watch1</b>] and verify the variable in window<br>
+</span>
+
+
+![](img/RH850_watch_window_update2.png)
+
+<u>CC-RL Compiler User's Manual</u>
+[back to top](#article_top)
+
+---
+
 

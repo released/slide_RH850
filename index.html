@@ -493,6 +493,11 @@ Need to manual add driver start API , ex : <br><br>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
+<h1 id="smart-config--uart0-printf-sample-code">Smart Config. – UART0 printf sample code </h1>
+<p><a href="https://github.com/released/Sample_Project_RH850_S1_UART_printf">Sample_Project_RH850_S1_UART_printf</a></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
 <p><a id="article_pwm" href=""></a></p>
 <h1 id="smart-config--pwm">Smart Config. – PWM </h1>
 <p><img src="img/slide_extend_RH850128.png" alt=""></p>
@@ -545,11 +550,16 @@ Need to manual add driver start API , ex : <br><br>
 <p><img src="img/slide_extend_RH850145.png" alt=""></p>
 <p><img src="img/slide_extend_RH850146.png" alt=""></p>
 <p><img src="img/slide_extend_RH850149.png" alt=""></p>
-<p><img src="img/slide_extend_RH850147.png" alt=""></p>
+<p><img src="img/slide_extend_RH850147_1.png" alt=""></p>
+<p><img src="img/slide_extend_RH850147_2.png" alt=""></p>
+<p><img src="img/slide_extend_RH850147_3.png" alt=""></p>
+<p><img src="img/slide_extend_RH850147_4.png" alt=""></p>
+<p><a href="https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh">Sample_Project_RH850_S1_ADC_MultiCh</a></p>
 <span style="color:#FF0000">
 Need to manual add driver start API , ex : <br><br>
 </span>
 <pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_ADCA0_ScanGroup1_Start();
+R_Config_ADCA0_ScanGroup1_OperationOn();
 </code></pre><p><img src="img/slide_extend_RH850148.png" alt=""></p>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
@@ -888,6 +898,18 @@ Use [<b> Build Mode Setting </b>] , to split different macro in different projec
 <p>Add the macro define for extra project<br>
 <img src="img/slide_extend_RH850218.png" alt=""></p>
 <p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<h1 id="tips--add-global-variable-into-watch-window-with-real-time-update">Tips : add global variable into watch window with real time update </h1>
+<span style="color:#FF0000">
+enable [<b>Access during the execution</b>] at Debugger Property &gt; Debug Tool Settings tab<br>
+</span>
+<p><img src="img/RH850_watch_window_update.png" alt=""></p>
+<span style="color:#FF0000">
+Add global variable into watch window , by [<b>Register to Watch1</b>] and verify the variable in window<br>
+</span>
+<p><img src="img/RH850_watch_window_update2.png" alt=""></p>
+<p><u>CC-RL Compiler User's Manual</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
 
