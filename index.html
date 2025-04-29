@@ -281,7 +281,11 @@ Select target GPIO port , to set GPIO input , output<br><br>
 <a href="#article_top">back to top</a></p>
 <hr>
 <h1 id="smart-config--gpio-output">Smart Config. – GPIO output </h1>
-<p><img src="img/slide_extend_RH85074.png" alt=""></p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">GPIO_GETLEVEL</span><span class="token expression"><span class="token punctuation">(</span>n<span class="token punctuation">,</span>Pin<span class="token punctuation">)</span>                            <span class="token punctuation">(</span>PORT<span class="token punctuation">.</span>PPR</span><span class="token punctuation">##</span><span class="token expression">n <span class="token operator">&amp;=</span> <span class="token number">1u</span><span class="token operator">&lt;&lt;</span>Pin<span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">GPIO_TOGGLE</span><span class="token expression"><span class="token punctuation">(</span>n<span class="token punctuation">,</span>Pin<span class="token punctuation">)</span>                              <span class="token punctuation">(</span>PORT<span class="token punctuation">.</span>PNOT</span><span class="token punctuation">##</span><span class="token expression">n <span class="token operator">|=</span> <span class="token number">1u</span><span class="token operator">&lt;&lt;</span>Pin<span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">GPIO_HIGH</span><span class="token expression"><span class="token punctuation">(</span>Port<span class="token punctuation">,</span>Pin<span class="token punctuation">)</span>                             <span class="token punctuation">(</span>PORT<span class="token punctuation">.</span>Port <span class="token operator">|=</span> <span class="token number">1u</span><span class="token operator">&lt;&lt;</span>Pin<span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">GPIO_LOW</span><span class="token expression"><span class="token punctuation">(</span>Port<span class="token punctuation">,</span>Pin<span class="token punctuation">)</span>                              <span class="token punctuation">(</span>PORT<span class="token punctuation">.</span>Port <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1u</span><span class="token operator">&lt;&lt;</span>Pin<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span>
+</code></pre><p><img src="img/slide_extend_RH85074.png" alt=""></p>
 <p><img src="img/slide_extend_RH85073.png" alt=""></p>
 <p><img src="img/slide_extend_RH85075.png" alt=""></p>
 <p><img src="img/slide_extend_RH85076.png" alt=""></p>
@@ -295,7 +299,7 @@ Select target GPIO port , to set GPIO input , output<br><br>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
-<h1 id="rh850-f1km-s4-example-code">RH850 F1KM-S4 example code </h1>
+<h1 id="rh850-f1km-s4-sample-code">RH850 F1KM-S4 sample code </h1>
 <p>Y-ASK-RH850F1KM-S4-V3<br>
 <a href="https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit">https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit</a></p>
 <p>Y-ASK-RH850F1KM-S4-V3 Software Package<br>
@@ -311,6 +315,7 @@ Select target GPIO port , to set GPIO input , output<br><br>
 <hr>
 <p><a id="article_ext" href=""></a></p>
 <h1 id="smart-config--external-int">Smart Config. – external int. </h1>
+<p><a href="https://github.com/released/Sample_Project_RH850_S1_Button_INT">Sample_Project_RH850_S1_Button_INT</a></p>
 <p><img src="img/slide_extend_RH85082.png" alt=""></p>
 <p><img src="img/slide_extend_RH85083.png" alt=""></p>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
@@ -472,6 +477,7 @@ Need to manual add driver start API , ex : <br><br>
 <hr>
 <p><a id="article_uart" href=""></a></p>
 <h1 id="smart-config--uart0">Smart Config. – UART0 </h1>
+<p><a href="https://github.com/released/Sample_Project_RH850_S1_UART_printf">Sample_Project_RH850_S1_UART_printf</a></p>
 <p><img src="img/slide_extend_RH850120.png" alt=""></p>
 <p><img src="img/slide_extend_RH850121.png" alt=""></p>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
@@ -490,11 +496,6 @@ Need to manual add driver start API , ex : <br><br>
 </span>
 <pre data-role="codeBlock" data-info="" class="language-text"><code>R_Config_UART0_Start();
 </code></pre><p><img src="img/slide_extend_RH850126.png" alt=""></p>
-<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
-<a href="#article_top">back to top</a></p>
-<hr>
-<h1 id="smart-config--uart0-printf-sample-code">Smart Config. – UART0 printf sample code </h1>
-<p><a href="https://github.com/released/Sample_Project_RH850_S1_UART_printf">Sample_Project_RH850_S1_UART_printf</a></p>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
@@ -547,6 +548,7 @@ Need to manual add driver start API , ex : <br><br>
 <a href="#article_top">back to top</a></p>
 <hr>
 <h1 id="smart-config--adc-1">Smart Config. – ADC </h1>
+<p><a href="https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh">Sample_Project_RH850_S1_ADC_MultiCh</a></p>
 <p><img src="img/slide_extend_RH850145.png" alt=""></p>
 <p><img src="img/slide_extend_RH850146.png" alt=""></p>
 <p><img src="img/slide_extend_RH850149.png" alt=""></p>
@@ -554,7 +556,6 @@ Need to manual add driver start API , ex : <br><br>
 <p><img src="img/slide_extend_RH850147_2.png" alt=""></p>
 <p><img src="img/slide_extend_RH850147_3.png" alt=""></p>
 <p><img src="img/slide_extend_RH850147_4.png" alt=""></p>
-<p><a href="https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh">Sample_Project_RH850_S1_ADC_MultiCh</a></p>
 <span style="color:#FF0000">
 Need to manual add driver start API , ex : <br><br>
 </span>

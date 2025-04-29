@@ -451,6 +451,14 @@ Select target GPIO port , to set GPIO input , output<br><br>
 
 # Smart Config. – GPIO output
 
+```c
+#define GPIO_GETLEVEL(n,Pin)                            (PORT.PPR##n &= 1u<<Pin)
+#define GPIO_TOGGLE(n,Pin)                              (PORT.PNOT##n |= 1u<<Pin)
+#define GPIO_HIGH(Port,Pin)                             (PORT.Port |= 1u<<Pin)
+#define GPIO_LOW(Port,Pin)                              (PORT.Port &= ~(1u<<Pin))
+```
+
+
 ![](img/slide_extend_RH85074.png)
 
 ![](img/slide_extend_RH85073.png)
@@ -477,7 +485,7 @@ Select target GPIO port , to set GPIO input , output<br><br>
 
 ---
 
-# RH850 F1KM-S4 example code
+# RH850 F1KM-S4 sample code
 
 Y-ASK-RH850F1KM-S4-V3
 [https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit)
@@ -503,6 +511,8 @@ Y-ASK-RH850F1KM-S1-V3 Sample Code
 <a id="article_ext"></a>
 
 # Smart Config. – external int.
+
+[Sample_Project_RH850_S1_Button_INT](https://github.com/released/Sample_Project_RH850_S1_Button_INT)
 
 ![](img/slide_extend_RH85082.png)
 
@@ -730,6 +740,8 @@ R_Config_CSIH0_Start();
 
 # Smart Config. – UART0
 
+[Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
+
 ![](img/slide_extend_RH850120.png)
 
 ![](img/slide_extend_RH850121.png)
@@ -764,15 +776,6 @@ R_Config_UART0_Start();
 ```
 
 ![](img/slide_extend_RH850126.png)
-
-<u>RH850 Smart Configurator User's Guide: CS+</u>
-[back to top](#article_top)    
-
----
-
-# Smart Config. – UART0 printf sample code
-
-[Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
 
 <u>RH850 Smart Configurator User's Guide: CS+</u>
 [back to top](#article_top)    
@@ -872,6 +875,8 @@ R_Config_TAUB0_Start();
 
 # Smart Config. – ADC
 
+[Sample_Project_RH850_S1_ADC_MultiCh](https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh)
+
 ![](img/slide_extend_RH850145.png)
 
 ![](img/slide_extend_RH850146.png)
@@ -885,9 +890,6 @@ R_Config_TAUB0_Start();
 ![](img/slide_extend_RH850147_3.png)
 
 ![](img/slide_extend_RH850147_4.png)
-
-[Sample_Project_RH850_S1_ADC_MultiCh](https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh)
-
 
 <span style="color:#FF0000">
 Need to manual add driver start API , ex : <br><br>
