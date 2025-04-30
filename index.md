@@ -487,21 +487,18 @@ Select target GPIO port , to set GPIO input , output<br><br>
 
 # RH850 F1KM-S4 sample code
 
-Y-ASK-RH850F1KM-S4-V3
-[https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit)
+[Y-ASK-RH850F1KM-S4-V3](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s4-v3-rh850f1km-s4-and-rh850f1km-s2-starter-kit)
 
-Y-ASK-RH850F1KM-S4-V3 Software Package
-[https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&r=1261056](https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&r=1261056)
+[Y-ASK-RH850F1KM-S1-V3](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s1-v3-rh850f1km-s1-starter-kit)
 
 ![](img/slide_extend_RH85080.png)
 
+[Y-ASK-RH850F1KM-S4-V3 Software Package](https://www.renesas.com/document/sws/y-ask-rh850f1km-s4-v3-software-package?language=en&r=1261056)
+
+[Y-ASK-RH850F1KM-S1-V3 Sample Code](https://www.renesas.com/en/document/scd/y-ask-rh850f1km-s1-v3-sample-code?r=1261041)
+
 ![](img/slide_extend_RH85081.png)
 
-Y-ASK-RH850F1KM-S1-V3
-[https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s1-v3-rh850f1km-s1-starter-kit](https://www.renesas.com/en/products/microcontrollers-microprocessors/rh850-automotive-mcus/y-ask-rh850f1km-s1-v3-rh850f1km-s1-starter-kit)
-
-Y-ASK-RH850F1KM-S1-V3 Sample Code
-[https://www.renesas.com/en/document/scd/y-ask-rh850f1km-s1-v3-sample-code?r=1261041](https://www.renesas.com/en/document/scd/y-ask-rh850f1km-s1-v3-sample-code?r=1261041)
 
 <u>RH850 Smart Configurator User's Guide: CS+</u>
 [back to top](#article_top)    
@@ -511,8 +508,6 @@ Y-ASK-RH850F1KM-S1-V3 Sample Code
 <a id="article_ext"></a>
 
 # Smart Config. – external int.
-
-[Sample_Project_RH850_S1_Button_INT](https://github.com/released/Sample_Project_RH850_S1_Button_INT)
 
 ![](img/slide_extend_RH85082.png)
 
@@ -529,6 +524,8 @@ Y-ASK-RH850F1KM-S1-V3 Sample Code
 [back to top](#article_top)    
 
 ---
+
+[Sample_Project_RH850_S1_Button_INT](https://github.com/released/Sample_Project_RH850_S1_Button_INT)
 
 ![](img/slide_extend_RH85085.png)
 
@@ -699,6 +696,8 @@ R_Config_CSIG0_Start();
 
 ---
 
+[Sample_Project_RH850_S1_SPI_Master](https://github.com/released/Sample_Project_RH850_S1_SPI_Master)
+
 ![](img/slide_extend_RH850110.png)
 
 ![](img/slide_extend_RH850111.png)
@@ -740,8 +739,6 @@ R_Config_CSIH0_Start();
 
 # Smart Config. – UART0
 
-[Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
-
 ![](img/slide_extend_RH850120.png)
 
 ![](img/slide_extend_RH850121.png)
@@ -757,6 +754,8 @@ R_Config_CSIH0_Start();
 [back to top](#article_top)    
 
 ---
+
+[Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
 
 ![](img/slide_extend_RH850123.png)
 
@@ -814,6 +813,9 @@ R_Config_UART0_Start();
 [back to top](#article_top)    
 
 ---
+
+[Sample_Project_RH850_S1_PWM_MultiCh](https://github.com/released/Sample_Project_RH850_S1_PWM_MultiCh)
+
 
 ![](img/slide_extend_RH850135.png)
 
