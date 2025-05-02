@@ -815,6 +815,7 @@ R_Config_UART0_Start();
 ---
 
 [Sample_Project_RH850_S1_PWM_MultiCh](https://github.com/released/Sample_Project_RH850_S1_PWM_MultiCh)
+[Sample_Project_RH850_S1_Input_Capture](https://github.com/released/Sample_Project_RH850_S1_Input_Capture)
 
 
 ![](img/slide_extend_RH850135.png)
