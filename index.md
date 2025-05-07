@@ -452,7 +452,7 @@ Select target GPIO port , to set GPIO input , output<br><br>
 # Smart Config. – GPIO output
 
 ```c
-#define GPIO_GETLEVEL(n,Pin)                            (PORT.PPR##n &= 1u<<Pin)
+#define GPIO_GETLEVEL(n,Pin)                            (((PORT.PPR##n & 1u<<Pin) == 0U)? 0U : 1U)
 #define GPIO_TOGGLE(n,Pin)                              (PORT.PNOT##n |= 1u<<Pin)
 #define GPIO_HIGH(Port,Pin)                             (PORT.Port |= 1u<<Pin)
 #define GPIO_LOW(Port,Pin)                              (PORT.Port &= ~(1u<<Pin))
@@ -697,6 +697,10 @@ R_Config_CSIG0_Start();
 ---
 
 [Sample_Project_RH850_S1_SPI_Master](https://github.com/released/Sample_Project_RH850_S1_SPI_Master)
+
+[Sample_Project_RH850_S1_CSIH0_SPI_Master](https://github.com/released/Sample_Project_RH850_S1_CSIH0_SPI_Master)
+
+[Sample_Project_RH850_S1_CSIH1_SPI_Slave](https://github.com/released/Sample_Project_RH850_S1_CSIH1_SPI_Slave)
 
 ![](img/slide_extend_RH850110.png)
 
