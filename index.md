@@ -761,6 +761,8 @@ R_Config_CSIH0_Start();
 
 [Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
 
+[Sample_Project_RH850_S1_UART1_TX_RX](https://github.com/released/Sample_Project_RH850_S1_UART1_TX_RX)
+
 ![](img/slide_extend_RH850123.png)
 
 ![](img/slide_extend_RH850124.png)
