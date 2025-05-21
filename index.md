@@ -866,6 +866,10 @@ R_Config_TAUB0_Start();
 
 ![](img/slide_extend_RH850142.png)
 
+![](img/slide_extend_RH850142_1.png)
+
+![](img/slide_extend_RH850142_2.png)
+
 <u>RH850 Smart Configurator User's Guide: CS+</u>
 [back to top](#article_top)    
 
@@ -1003,6 +1007,23 @@ USE_TABLE_REFERENCE_METHOD .set 1
 
 ---
 
+![](img/slide_extend_RH850160.png)
+
+<span style="color:#FF0000">
+Add [ .const ]<br><br>   
+</span>
+
+```
+mov #__sEIINTTBL.const , r6 
+```
+
+![](img/slide_extend_RH850161.png)
+
+<u>RH850 Smart Configurator User's Guide: CS+</u>
+[back to top](#article_top)    
+
+---
+
 <span style="color:#FF0000">
 Add [ ; ] , to disable default interrupt<br><br> 
 </span>
@@ -1027,22 +1048,6 @@ Add [ ; ] , to disable default interrupt<br><br>
 
 ---
 
-![](img/slide_extend_RH850160.png)
-
-<span style="color:#FF0000">
-Add [ .const ]<br><br>   
-</span>
-
-```
-mov #__sEIINTTBL.const , r6 
-```
-
-![](img/slide_extend_RH850161.png)
-
-<u>RH850 Smart Configurator User's Guide: CS+</u>
-[back to top](#article_top)    
-
----
 
 <span style="color:#FF0000">
 Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</b>]<br><br>
@@ -1056,29 +1061,40 @@ Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</
 ---
 
 <span style="color:#FF0000">
-REMOVE [<b>EIINTTBL</b>] in Section Settings
-1. Select [on Section : EIINTTBL]
-2. Select [Remove]
+REMOVE [<b>EIINTTBL</b>] in Section Settings<br>
+
+1. Select [on Section : EIINTTBL]<br>
+
+2. Select [Remove]<br>
+
 </span>
 
 ![](img/slide_extend_RH850164.png)
 
 
 <span style="color:#FF0000">
-ADD [address 0x200] in Section Settings
-1. Select on [blank in Address]
-2. Select [Add]
+ADD [address 0x200] in Section Settings<br>
+
+1. Select on [blank in Address]<br>
+
+2. Select [Add]<br>
+
 3. Key in [200]<br><br>
+
 </span>
 
 ![](img/slide_extend_RH850163.png)
 
 
 <span style="color:#FF0000">
-ADD [<b>EIINTTBL.const</b>] in Section Settings
-1. Select on [blank in Section] (addr : 0x200) 
-2. Select [Add]
+ADD [<b>EIINTTBL.const</b>] in Section Settings<br>
+
+1. Select on [blank in Section] (addr : 0x200)<br> 
+
+2. Select [Add]<br>
+
 3. Key in [EIINTTBL.const]<br><br>
+
 </span>
 
 ![](img/slide_extend_RH850165.png)
@@ -1089,6 +1105,57 @@ Final section table result<br><br>
 </span>
 
 ![](img/slide_extend_RH850166.png)
+
+
+[reference link](https://community.renesas.com/cfs-file/__key/communityserver-discussions-components-files/259/8867.Interrupt--setting.pdf)
+
+<u>RH850 Smart Configurator User's Guide: CS+</u>
+[back to top](#article_top)    
+
+---
+
+* __Another method__ 
+
+<span style="color:#FF0000">
+Add [ ; ] , to disable default interrupt<br><br> 
+</span>
+
+```
+.section "EIINTTBL", const
+.align 512
+;.dw #_Dummy_EI ; INT0
+;.dw #_Dummy_EI ; INT1
+;.dw #_Dummy_EI ; INT2
+;.rept 512 - 3
+;.dw #_Dummy_EI ; INTn
+;.endm
+```
+
+![](img/slide_extend_RH850166_0.png)
+
+<span style="color:#FF0000">
+Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</b>]<br><br>
+</span>
+
+![](img/slide_extend_RH850166_2.png)
+
+<span style="color:#FF0000">
+ADD [<b>EIINTTBL.const</b>] in Section Settings<br>
+
+1. Select on [blank in Section]<br>
+
+2. Select [Add]<br>
+
+3. Key in [EIINTTBL.const]<br><br>
+
+</span>
+
+![](img/slide_extend_RH850166_3.png)
+
+EIINTTBL need to be at 0x200 in map file
+![](img/slide_extend_RH850166_1.png)
+
+[reference link](https://blog.csdn.net/laifengyuan1/article/details/125165618)
 
 <u>RH850 Smart Configurator User's Guide: CS+</u>
 [back to top](#article_top)    
@@ -1227,9 +1294,13 @@ Display section message
 
 <span style="color:#FF0000">
 ADD [<b>privateData.const</b>] in Section Settings<br>
+
 1. Select on [.data] in Section<br>
+
 2. Select [Add]<br>
+
 3. Key in [<b>privateData.const</b>] <br><br>
+
 </span>  
 
 ![](img/slide_extend_RH850198.png)
@@ -1256,9 +1327,13 @@ Code assignment example
 
 <span style="color:#FF0000">
 ADD [<b>privateData.data</b>] in Section Settings<br>
+
 1. Select on [.data] in Section<br>
+
 2. Select [Add]<br>
+
 3. Key in [<b>privateData.data</b>] <br><br>
+
 </span>
 
 ![](img/slide_extend_RH850201.png)
@@ -1287,9 +1362,13 @@ Code assignment example
 
 <span style="color:#FF0000">
 ADD [<b>privateData.bss</b>] in Section Settings<br>
+
 1. Select on [.bss] in Section<br>
+
 2. Select [Add]<br>
+
 3. Key in [<b>privateData.bss</b>] <br><br>
+
 </span>
 
 ![](img/slide_extend_RH850204.png)

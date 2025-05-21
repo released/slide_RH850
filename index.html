@@ -540,6 +540,8 @@ Need to manual add driver start API , ex : <br><br>
 <hr>
 <p><img src="img/slide_extend_RH850141.png" alt=""></p>
 <p><img src="img/slide_extend_RH850142.png" alt=""></p>
+<p><img src="img/slide_extend_RH850142_1.png" alt=""></p>
+<p><img src="img/slide_extend_RH850142_2.png" alt=""></p>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
@@ -614,6 +616,15 @@ Remove [ ; ] , to enable table reference method<br><br>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
+<p><img src="img/slide_extend_RH850160.png" alt=""></p>
+<span style="color:#FF0000">
+Add [ .const ]<br><br>   
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>mov #__sEIINTTBL.const , r6 
+</code></pre><p><img src="img/slide_extend_RH850161.png" alt=""></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
 <span style="color:#FF0000">
 Add [ ; ] , to disable default interrupt<br><br> 
 </span>
@@ -630,15 +641,6 @@ Add [ ; ] , to disable default interrupt<br><br>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
-<p><img src="img/slide_extend_RH850160.png" alt=""></p>
-<span style="color:#FF0000">
-Add [ .const ]<br><br>   
-</span>
-<pre data-role="codeBlock" data-info="" class="language-text"><code>mov #__sEIINTTBL.const , r6 
-</code></pre><p><img src="img/slide_extend_RH850161.png" alt=""></p>
-<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
-<a href="#article_top">back to top</a></p>
-<hr>
 <span style="color:#FF0000">
 Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</b>]<br><br>
 </span>
@@ -647,29 +649,92 @@ Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</
 <a href="#article_top">back to top</a></p>
 <hr>
 <span style="color:#FF0000">
-REMOVE [<b>EIINTTBL</b>] in Section Settings
-1. Select [on Section : EIINTTBL]
-2. Select [Remove]
+REMOVE [<b>EIINTTBL</b>] in Section Settings<br>
+<ol>
+<li>
+<p>Select [on Section : EIINTTBL]<br></p>
+</li>
+<li>
+<p>Select [Remove]<br></p>
+</li>
+</ol>
 </span>
 <p><img src="img/slide_extend_RH850164.png" alt=""></p>
 <span style="color:#FF0000">
-ADD [address 0x200] in Section Settings
-1. Select on [blank in Address]
-2. Select [Add]
-3. Key in [200]<br><br>
+ADD [address 0x200] in Section Settings<br>
+<ol>
+<li>
+<p>Select on [blank in Address]<br></p>
+</li>
+<li>
+<p>Select [Add]<br></p>
+</li>
+<li>
+<p>Key in [200]<br><br></p>
+</li>
+</ol>
 </span>
 <p><img src="img/slide_extend_RH850163.png" alt=""></p>
 <span style="color:#FF0000">
-ADD [<b>EIINTTBL.const</b>] in Section Settings
-1. Select on [blank in Section] (addr : 0x200) 
-2. Select [Add]
-3. Key in [EIINTTBL.const]<br><br>
+ADD [<b>EIINTTBL.const</b>] in Section Settings<br>
+<ol>
+<li>
+<p>Select on [blank in Section] (addr : 0x200)<br></p>
+</li>
+<li>
+<p>Select [Add]<br></p>
+</li>
+<li>
+<p>Key in [EIINTTBL.const]<br><br></p>
+</li>
+</ol>
 </span>
 <p><img src="img/slide_extend_RH850165.png" alt=""></p>
 <span style="color:#FF0000">
 Final section table result<br><br>
 </span>
 <p><img src="img/slide_extend_RH850166.png" alt=""></p>
+<p><a href="https://community.renesas.com/cfs-file/__key/communityserver-discussions-components-files/259/8867.Interrupt--setting.pdf">reference link</a></p>
+<p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
+<ul>
+<li><strong>Another method</strong></li>
+</ul>
+<span style="color:#FF0000">
+Add [ ; ] , to disable default interrupt<br><br> 
+</span>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>.section "EIINTTBL", const
+.align 512
+;.dw #_Dummy_EI ; INT0
+;.dw #_Dummy_EI ; INT1
+;.dw #_Dummy_EI ; INT2
+;.rept 512 - 3
+;.dw #_Dummy_EI ; INTn
+;.endm
+</code></pre><p><img src="img/slide_extend_RH850166_0.png" alt=""></p>
+<span style="color:#FF0000">
+Open [<b>Section</b>] modify under [<b>Link Options</b>] in [<b>CC-RH Property</b>]<br><br>
+</span>
+<p><img src="img/slide_extend_RH850166_2.png" alt=""></p>
+<span style="color:#FF0000">
+ADD [<b>EIINTTBL.const</b>] in Section Settings<br>
+<ol>
+<li>
+<p>Select on [blank in Section]<br></p>
+</li>
+<li>
+<p>Select [Add]<br></p>
+</li>
+<li>
+<p>Key in [EIINTTBL.const]<br><br></p>
+</li>
+</ol>
+</span>
+<p><img src="img/slide_extend_RH850166_3.png" alt=""></p>
+<p>EIINTTBL need to be at 0x200 in map file<br>
+<img src="img/slide_extend_RH850166_1.png" alt=""></p>
+<p><a href="https://blog.csdn.net/laifengyuan1/article/details/125165618">reference link</a></p>
 <p><u>RH850 Smart Configurator User's Guide: CS+</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
@@ -741,9 +806,17 @@ RAM size display<br><br>
 <h1 id="tips--section-define-const">Tips : section define (const) </h1>
 <span style="color:#FF0000">
 ADD [<b>privateData.const</b>] in Section Settings<br>
-1. Select on [.data] in Section<br>
-2. Select [Add]<br>
-3. Key in [<b>privateData.const</b>] <br><br>
+<ol>
+<li>
+<p>Select on [.data] in Section<br></p>
+</li>
+<li>
+<p>Select [Add]<br></p>
+</li>
+<li>
+<p>Key in [<b>privateData.const</b>] <br><br></p>
+</li>
+</ol>
 </span>  
 <p><img src="img/slide_extend_RH850198.png" alt=""></p>
 <table>
@@ -781,9 +854,17 @@ ADD [<b>privateData.const</b>] in Section Settings<br>
 <h1 id="tips--section-define-data">Tips : section define (data) </h1>
 <span style="color:#FF0000">
 ADD [<b>privateData.data</b>] in Section Settings<br>
-1. Select on [.data] in Section<br>
-2. Select [Add]<br>
-3. Key in [<b>privateData.data</b>] <br><br>
+<ol>
+<li>
+<p>Select on [.data] in Section<br></p>
+</li>
+<li>
+<p>Select [Add]<br></p>
+</li>
+<li>
+<p>Key in [<b>privateData.data</b>] <br><br></p>
+</li>
+</ol>
 </span>
 <p><img src="img/slide_extend_RH850201.png" alt=""></p>
 <table>
@@ -821,9 +902,17 @@ ADD [<b>privateData.data</b>] in Section Settings<br>
 <h1 id="tips--section-define-bss">Tips : section define (bss) </h1>
 <span style="color:#FF0000">
 ADD [<b>privateData.bss</b>] in Section Settings<br>
-1. Select on [.bss] in Section<br>
-2. Select [Add]<br>
-3. Key in [<b>privateData.bss</b>] <br><br>
+<ol>
+<li>
+<p>Select on [.bss] in Section<br></p>
+</li>
+<li>
+<p>Select [Add]<br></p>
+</li>
+<li>
+<p>Key in [<b>privateData.bss</b>] <br><br></p>
+</li>
+</ol>
 </span>
 <p><img src="img/slide_extend_RH850204.png" alt=""></p>
 <table>
