@@ -1106,7 +1106,8 @@ Final section table result<br><br>
 
 ![](img/slide_extend_RH850166.png)
 
-EIINTTBL need to be at 0x200 in map file
+
+section : 0x200 in map file , must be reserved (SECTION:RESET)
 
 ![](img/slide_extend_RH850166_4.png)
 
@@ -1156,7 +1157,7 @@ ADD [<b>EIINTTBL.const</b>] in Section Settings<br>
 ![](img/slide_extend_RH850166_3.png)
 
 
-EIINTTBL need to be at 0x200 in map file
+section : 0x200 in map file , must be reserved (SECTION:RESET)
 
 ![](img/slide_extend_RH850166_1.png)
 
