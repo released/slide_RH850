@@ -1106,6 +1106,9 @@ Final section table result<br><br>
 
 ![](img/slide_extend_RH850166.png)
 
+EIINTTBL need to be at 0x200 in map file
+
+![](img/slide_extend_RH850166_4.png)
 
 [reference link](https://community.renesas.com/cfs-file/__key/communityserver-discussions-components-files/259/8867.Interrupt--setting.pdf)
 
@@ -1152,7 +1155,9 @@ ADD [<b>EIINTTBL.const</b>] in Section Settings<br>
 
 ![](img/slide_extend_RH850166_3.png)
 
+
 EIINTTBL need to be at 0x200 in map file
+
 ![](img/slide_extend_RH850166_1.png)
 
 [reference link](https://blog.csdn.net/laifengyuan1/article/details/125165618)
