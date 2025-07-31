@@ -1006,6 +1006,61 @@ Add global variable into watch window , by [<b>Register to Watch1</b>] and verif
 <p><u>CC-RL Compiler User's Manual</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
+<h1 id="tips--how-to-create-library-for-co-work-purpose">Tips : how to create library for co-work purpose </h1>
+<p><a href="https://github.com/released/Sample_Project_RH850_S1_static_library">Sample_Project_RH850_S1_static_library</a></p>
+<span style="color:#FF0000">
+1. create new project and select [<b> Library(CC-RH) </b>] <br><br>
+</span>
+<p><img src="img/slide_extend_generate_lib_0.png" alt=""></p>
+<ol start="2">
+<li>
+<p>modify CC-RH Property<br>
+<img src="img/slide_extend_generate_lib_1.png" alt=""><br>
+<img src="img/slide_extend_generate_lib_1_1.png" alt=""></p>
+</li>
+<li>
+<p>add custom C code , for example</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token keyword keyword-unsigned">unsigned</span> <span class="token keyword keyword-char">char</span> <span class="token function">function_2</span><span class="token punctuation">(</span><span class="token keyword keyword-unsigned">unsigned</span> <span class="token keyword keyword-char">char</span> a<span class="token punctuation">,</span><span class="token keyword keyword-unsigned">unsigned</span> <span class="token keyword keyword-char">char</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token operator">-</span>b<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span> <span class="token operator">?</span> <span class="token punctuation">(</span>a<span class="token operator">-</span>b<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>b<span class="token operator">-</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-unsigned">unsigned</span> <span class="token keyword keyword-char">char</span> <span class="token function">function_1</span><span class="token punctuation">(</span><span class="token keyword keyword-unsigned">unsigned</span> <span class="token keyword keyword-char">char</span> a<span class="token punctuation">,</span><span class="token keyword keyword-unsigned">unsigned</span> <span class="token keyword keyword-char">char</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre><ol start="4">
+<li>compile and generate *.lib under \DefaultBuild folder</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>DefaultBuild\generate_lib.lib
+</code></pre><ol start="5">
+<li><strong>under taret application project</strong></li>
+</ol>
+<ul>
+<li>add this lib. into project , refer to below operation</li>
+</ul>
+<p>method 1<br>
+<img src="img/slide_extend_generate_lib_2.png" alt=""></p>
+<p>method 2<br>
+<img src="img/slide_extend_generate_lib_2_1.png" alt=""></p>
+<ul>
+<li>under c code in application project , add header and call the library function</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"custom_lib.h"</span></span>
+</code></pre><pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token function">tiny_printf</span><span class="token punctuation">(</span><span class="token string">"function_1 : %d\r\n"</span> <span class="token punctuation">,</span> <span class="token function">function_1</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">tiny_printf</span><span class="token punctuation">(</span><span class="token string">"function_2 : %d\r\n"</span> <span class="token punctuation">,</span> <span class="token function">function_2</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">tiny_printf</span><span class="token punctuation">(</span><span class="token string">"function_2 : %d\r\n"</span> <span class="token punctuation">,</span> <span class="token function">function_2</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><img src="img/slide_extend_generate_lib_4.png" alt=""></p>
+<ul>
+<li>when execute the function call in application project</li>
+</ul>
+<p><img src="img/slide_extend_generate_lib_3.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
+<a href="#article_top">back to top</a></p>
+<hr>
 
       </div>
       

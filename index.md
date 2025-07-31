@@ -1491,6 +1491,79 @@ Add global variable into watch window , by [<b>Register to Watch1</b>] and verif
 <u>CC-RL Compiler User's Manual</u>
 [back to top](#article_top)
 
+
+---
+
+# Tips : how to create library for co-work purpose
+
+[Sample_Project_RH850_S1_static_library](https://github.com/released/Sample_Project_RH850_S1_static_library)
+
+
+<span style="color:#FF0000">
+1. create new project and select [<b> Library(CC-RH) </b>] <br><br>
+</span>
+
+![](img/slide_extend_generate_lib_0.png)
+
+2. modify CC-RH Property
+![](img/slide_extend_generate_lib_1.png)
+![](img/slide_extend_generate_lib_1_1.png)
+
+3. add custom C code , for example 
+
+```c
+
+unsigned char function_2(unsigned char a,unsigned char b)
+{
+	return ( (a-b)>0 ? (a-b) : (b-a));
+}
+
+unsigned char function_1(unsigned char a,unsigned char b)
+{
+	return (a+b);
+}
+
+```
+
+4. compile and generate *.lib under \DefaultBuild folder
+```
+DefaultBuild\generate_lib.lib
+```
+
+5. __under taret application project__
+
+  - add this lib. into project , refer to below operation
+
+method 1
+![](img/slide_extend_generate_lib_2.png)
+
+method 2
+![](img/slide_extend_generate_lib_2_1.png)
+
+  - under c code in application project , add header and call the library function
+
+```c
+
+#include "custom_lib.h"
+```
+
+```c
+tiny_printf("function_1 : %d\r\n" , function_1(5,2));
+tiny_printf("function_2 : %d\r\n" , function_2(9,1));
+tiny_printf("function_2 : %d\r\n" , function_2(7,16));
+```
+
+
+![](img/slide_extend_generate_lib_4.png)
+
+  - when execute the function call in application project
+
+![](img/slide_extend_generate_lib_3.png)
+
+<u>CC-RH Compiler User's Manual</u>
+[back to top](#article_top)    
+
+
 ---
 
 
