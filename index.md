@@ -1494,7 +1494,7 @@ Add global variable into watch window , by [<b>Register to Watch1</b>] and verif
 
 ---
 
-# Tips : how to create library for co-work purpose
+# Tips : How to create library for co-work purpose
 
 [Sample_Project_RH850_S1_static_library](https://github.com/released/Sample_Project_RH850_S1_static_library)
 
@@ -1513,9 +1513,10 @@ Add global variable into watch window , by [<b>Register to Watch1</b>] and verif
 
 ![](img/slide_extend_generate_lib_5.png)
 
-```c
 
-under custom_lib.c
+
+under __custom_lib.c__
+```c
 unsigned char function_2(unsigned char a,unsigned char b)
 {
 	return ( (a-b)>0 ? (a-b) : (b-a));
@@ -1525,22 +1526,24 @@ unsigned char function_1(unsigned char a,unsigned char b)
 {
 	return (a+b);
 }
+```
 
-
-under library_test_01.c
+under __library_test_01.c__
+```c
 unsigned long library_test_001(void)
 {
     static unsigned long cnt = 0x1000;
 	return ( cnt+= 0x100 );
 }
+```
 
-under library_test_02.c
+under __library_test_02.c__
+```c
 unsigned long library_test_002(void)
 {
     static unsigned long cnt = 0x100;
 	return ( cnt+= 0x10 );
 }
-
 ```
 
 4. compile and generate *.lib under \DefaultBuild folder
@@ -1548,14 +1551,15 @@ unsigned long library_test_002(void)
 DefaultBuild\generate_lib.lib
 ```
 
-5. __under taret application project__
+5. __under target application project__
 
   - add this lib. into project , refer to below operation
 
 method 1
 ![](img/slide_extend_generate_lib_2.png)
 
-method 2
+method 2 
+draw the lib into project
 ![](img/slide_extend_generate_lib_2_1.png)
 
   - under c code in application project , add header and call the library function
@@ -1579,6 +1583,77 @@ method 2
   - when execute the function call in application project
 
 ![](img/slide_extend_generate_lib_3.png)
+
+<u>CC-RH Compiler User's Manual</u>
+[back to top](#article_top)    
+
+
+
+---
+
+# Tips : How to link object into library
+
+## prepare 2 files 
+
+
+<span style="color:#FF0000">
+1. add <b>target object file</b> that need to combine as library
+<br>
+ex : custom_func.obj , misc_config.obj , Pin.obj
+<br>
+2. output library will will be <b>lib_custom.lib</b>
+<br>
+<br>
+</span>
+
+
+__add_lib.rlc__
+```c
+-form library
+-output lib_custom.lib
+-input .\DefaultBuild\custom_func.obj
+-input .\DefaultBuild\misc_config.obj
+-input .\DefaultBuild\Pin.obj
+```
+
+<span style="color:#FF0000">
+3. use rlink: Optimizing linker start command , to generate library
+<br>
+4. modify the file path if nessary
+<br>
+ex : 
+...\CC\CC-RH\V2.07.00
+<br>
+<br>
+</span>
+
+__add_lib.bat__
+```c
+
+set "CCRH=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RH\V2.07.00"
+
+set PATH=%CCRH%\bin;%PATH%
+
+rlink -subcommand=add_lib.rlc
+
+```
+
+<span style="color:#FF0000">
+5. put add_lib.bat and add_lib.rlc under project folder 
+
+![](img/slide_extend_generate_lib_6.png)
+
+<br>
+6. add <b> add_lib.bat</b> to project post build command
+
+![](img/slide_extend_generate_lib_7.png)
+
+7.build the project , library will auto generate after build complete
+![](img/slide_extend_generate_lib_8.png)
+
+<br>
+<br>
+</span>
 
 <u>CC-RH Compiler User's Manual</u>
 [back to top](#article_top)    
