@@ -1511,8 +1511,11 @@ Add global variable into watch window , by [<b>Register to Watch1</b>] and verif
 
 3. add custom C code , for example 
 
+![](img/slide_extend_generate_lib_5.png)
+
 ```c
 
+under custom_lib.c
 unsigned char function_2(unsigned char a,unsigned char b)
 {
 	return ( (a-b)>0 ? (a-b) : (b-a));
@@ -1521,6 +1524,21 @@ unsigned char function_2(unsigned char a,unsigned char b)
 unsigned char function_1(unsigned char a,unsigned char b)
 {
 	return (a+b);
+}
+
+
+under library_test_01.c
+unsigned long library_test_001(void)
+{
+    static unsigned long cnt = 0x1000;
+	return ( cnt+= 0x100 );
+}
+
+under library_test_02.c
+unsigned long library_test_002(void)
+{
+    static unsigned long cnt = 0x100;
+	return ( cnt+= 0x10 );
 }
 
 ```
@@ -1548,9 +1566,11 @@ method 2
 ```
 
 ```c
-tiny_printf("function_1 : %d\r\n" , function_1(5,2));
-tiny_printf("function_2 : %d\r\n" , function_2(9,1));
-tiny_printf("function_2 : %d\r\n" , function_2(7,16));
+    tiny_printf("function_1 : %d\r\n" , function_1(5,2));
+    tiny_printf("function_2 : %d\r\n" , function_2(9,1));
+    tiny_printf("function_2 : %d\r\n" , function_2(7,16));
+    tiny_printf("library_test_001 : 0x%08X\r\n" , library_test_001());
+    tiny_printf("library_test_002 : 0x%08X\r\n" , library_test_002());
 ```
 
 
