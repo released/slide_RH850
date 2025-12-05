@@ -1444,7 +1444,7 @@ check the address in map file
 
 ![](img/slide_extend_RH850213.png)
 
-<u>CC-RL Compiler User's Manual</u>
+<u>CC-RH Compiler User's Manual</u>
 [back to top](#article_top)
 
 ---
@@ -1475,6 +1475,8 @@ Add the macro define for extra project
 
 # Tips : add global variable into watch window with real time update
 
+[display value real time under watch windows](https://en-support.renesas.com/knowledgeBase/16979169)
+
 <span style="color:#FF0000">
 enable [<b>Access during the execution</b>] at Debugger Property > Debug Tool Settings tab<br>
 </span>
@@ -1485,10 +1487,40 @@ enable [<b>Access during the execution</b>] at Debugger Property > Debug Tool Se
 Add global variable into watch window , by [<b>Register to Watch1</b>] and verify the variable in window<br>
 </span>
 
-
 ![](img/RH850_watch_window_update2.png)
 
-<u>CC-RL Compiler User's Manual</u>
+
+<b>WHY watch window NOT change periodicity</b>
+
+
+![](img/RH850_watch_window_update_no_change.png)
+
+
+* check target MCU , RAM address in memory map
+
+ex : RH850/F1KM-S1 , 
+
+flash size 512K : Local RAM (Self) will be start at FEDF 0000
+
+flash size 1MB : Local RAM (Self) will be start at FEDE 0000
+
+
+![](img/RH850_watch_window_update3.png)
+
+
+* modify Seciton Settings , make sure RAM allocation is correct
+
+for example , below is for RH850/F1KM-S1 flash size 512K setting
+
+![](img/RH850_watch_window_update4.png)
+
+
+* after modify , variable in watch windows will display normal
+
+![](img/RH850_watch_window_update_period.png)
+
+
+<u>CC-RH Compiler User's Manual</u>
 [back to top](#article_top)
 
 

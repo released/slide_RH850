@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\averyc\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
       
       
       
@@ -977,7 +977,7 @@ Also able to define the address base on application<br><br>
 <hr>
 <h1 id="tips--section-allocation--size">Tips : section allocation , size </h1>
 <p><img src="img/slide_extend_RH850213.png" alt=""></p>
-<p><u>CC-RL Compiler User's Manual</u><br>
+<p><u>CC-RH Compiler User's Manual</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
 <h1 id="tips--project-split">Tips : project split </h1>
@@ -995,6 +995,7 @@ Use [<b> Build Mode Setting </b>] , to split different macro in different projec
 <a href="#article_top">back to top</a></p>
 <hr>
 <h1 id="tips--add-global-variable-into-watch-window-with-real-time-update">Tips : add global variable into watch window with real time update </h1>
+<p><a href="https://en-support.renesas.com/knowledgeBase/16979169">display value real time under watch windows</a></p>
 <span style="color:#FF0000">
 enable [<b>Access during the execution</b>] at Debugger Property &gt; Debug Tool Settings tab<br>
 </span>
@@ -1003,7 +1004,25 @@ enable [<b>Access during the execution</b>] at Debugger Property &gt; Debug Tool
 Add global variable into watch window , by [<b>Register to Watch1</b>] and verify the variable in window<br>
 </span>
 <p><img src="img/RH850_watch_window_update2.png" alt=""></p>
-<p><u>CC-RL Compiler User's Manual</u><br>
+<p><b>WHY watch window NOT change periodicity</b></p>
+<p><img src="img/RH850_watch_window_update_no_change.png" alt=""></p>
+<ul>
+<li>check target MCU , RAM address in memory map</li>
+</ul>
+<p>ex : RH850/F1KM-S1 ,</p>
+<p>flash size 512K : Local RAM (Self) will be start at FEDF 0000</p>
+<p>flash size 1MB : Local RAM (Self) will be start at FEDE 0000</p>
+<p><img src="img/RH850_watch_window_update3.png" alt=""></p>
+<ul>
+<li>modify Seciton Settings , make sure RAM allocation is correct</li>
+</ul>
+<p>for example , below is for RH850/F1KM-S1 flash size 512K setting</p>
+<p><img src="img/RH850_watch_window_update4.png" alt=""></p>
+<ul>
+<li>after modify , variable in watch windows will display normal</li>
+</ul>
+<p><img src="img/RH850_watch_window_update_period.png" alt=""></p>
+<p><u>CC-RH Compiler User's Manual</u><br>
 <a href="#article_top">back to top</a></p>
 <hr>
 <h1 id="tips--how-to-create-library-for-co-work-purpose">Tips : How to create library for co-work purpose </h1>
@@ -1127,13 +1146,271 @@ rlink <span class="token operator">-</span>subcommand<span class="token operator
 <hr>
 
       </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#agenda" class="md-toc-link">
+            <p>Agenda</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#ide--debug-tool" class="md-toc-link">
+            <p>IDE &amp; Debug tool</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#user-manual--cs" class="md-toc-link">
+            <p>User manual : CS+</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#user-manual--e2-studio" class="md-toc-link">
+            <p>User manual : e² studio</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#compiler--cc-rh-for-rh850" class="md-toc-link">
+            <p>Compiler : CC-RH for RH850</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#user-manual--cc-rh-for-rh850" class="md-toc-link">
+            <p>User manual : CC-RH for RH850</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-configurator-main-window" class="md-toc-link">
+            <p>Smart Configurator main window</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#renesas-flash-programmer" class="md-toc-link">
+            <p>Renesas Flash Programmer</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#create-project-by-cs-rh850" class="md-toc-link">
+            <p>Create project by CS+ (RH850)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#cs-rh850--main-window" class="md-toc-link">
+            <p>CS+ (RH850) : main window</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#cs-rh850--open-smart-configurator" class="md-toc-link">
+            <p>CS+ (RH850) : open smart configurator</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#cs-rh850--cc-rh-options" class="md-toc-link">
+            <p>CS+ (RH850) – CC-RH options</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#cs-rh850--debug-tool-options" class="md-toc-link">
+            <p>CS+ (RH850) – Debug Tool options</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--main-window-rh850" class="md-toc-link">
+            <p>Smart Config. : main window (RH850)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config---clock" class="md-toc-link">
+            <p>Smart Config. - Clock</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--add-component" class="md-toc-link">
+            <p>Smart Config. : add component</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--interval-timer" class="md-toc-link">
+            <p>Smart Config. – Interval Timer</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--timer-delay" class="md-toc-link">
+            <p>Smart Config. : Timer delay</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--generate-code" class="md-toc-link">
+            <p>Smart Config. – Generate code</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#cs---driver-code" class="md-toc-link">
+            <p>CS+ - driver code</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--gpio" class="md-toc-link">
+            <p>Smart Config. – GPIO</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--gpio-output" class="md-toc-link">
+            <p>Smart Config. – GPIO output</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--gpio-input" class="md-toc-link">
+            <p>Smart Config. – GPIO input</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#rh850-f1km-s4-sample-code" class="md-toc-link">
+            <p>RH850 F1KM-S4 sample code</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--external-int" class="md-toc-link">
+            <p>Smart Config. – external int.</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--i2c" class="md-toc-link">
+            <p>Smart Config. – I2C</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--spi-csig0" class="md-toc-link">
+            <p>Smart Config. – SPI (CSIG0)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--cpolcpha" class="md-toc-link">
+            <p>Smart Config. – CPOL/CPHA</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--spi-csih0" class="md-toc-link">
+            <p>Smart Config. – SPI (CSIH0)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--csig-vs-csih" class="md-toc-link">
+            <p>Smart Config. – CSIG vs CSIH</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--uart0" class="md-toc-link">
+            <p>Smart Config. – UART0</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--pwm" class="md-toc-link">
+            <p>Smart Config. – PWM</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--adc" class="md-toc-link">
+            <p>Smart Config. – ADC</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--adc-sampling" class="md-toc-link">
+            <p>Smart Config. – ADC sampling</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#smart-config--adc-1" class="md-toc-link">
+            <p>Smart Config. – ADC</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#add-root-path-in-path-edit" class="md-toc-link">
+            <p>Add root path in Path Edit</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#add-main-loop" class="md-toc-link">
+            <p>Add main loop</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#to-fix-interrupt-not-work-issue" class="md-toc-link">
+            <p>To fix INTERRUPT NOT WORK ISSUE</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#cs---entry-debug-mode" class="md-toc-link">
+            <p>CS+ - entry debug mode</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#renesas-flash-programmer-1" class="md-toc-link">
+            <p>Renesas Flash Programmer</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--convert-to-hex" class="md-toc-link">
+            <p>Tips : Convert to Hex</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--emulator-power-on-mcu" class="md-toc-link">
+            <p>Tips : Emulator power on MCU</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--set-clock-f1km-s1" class="md-toc-link">
+            <p>Tips : Set CLOCK (F1KM-S1)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--map-file-display" class="md-toc-link">
+            <p>Tips : map file display</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-message-display" class="md-toc-link">
+            <p>Tips : section message display</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--size-display-display-in-output-window" class="md-toc-link">
+            <p>Tips : size display display in output window</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--backup-times-generate-code" class="md-toc-link">
+            <p>Tips : Backup times (generate code)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-define-modify" class="md-toc-link">
+            <p>Tips : section define modify</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-define-const" class="md-toc-link">
+            <p>Tips : section define (const)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-define-data" class="md-toc-link">
+            <p>Tips : section define (data)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-define-bss" class="md-toc-link">
+            <p>Tips : section define (bss)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-define-not-assigned-address" class="md-toc-link">
+            <p>Tips : section define (not assigned address)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-define-assigned-address" class="md-toc-link">
+            <p>Tips : section define (assigned address)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--section-allocation--size" class="md-toc-link">
+            <p>Tips : section allocation , size</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--project-split" class="md-toc-link">
+            <p>Tips : project split</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--add-global-variable-into-watch-window-with-real-time-update" class="md-toc-link">
+            <p>Tips : add global variable into watch window with real time update</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#tips--how-to-create-library-for-co-work-purpose" class="md-toc-link">
+            <p>Tips : How to create library for co-work purpose</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#tips--how-to-link-object-into-library" class="md-toc-link"><p>Tips : How to link object into library</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#prepare-2-files" class="md-toc-link">
+            <p>prepare 2 files</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
       
-      
-    
-    
-    
-    
-    
-    
   
     </body></html>
