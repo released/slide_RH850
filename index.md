@@ -763,6 +763,9 @@ R_Config_CSIH0_Start();
 
 [Sample_Project_RH850_S1_UART1_TX_RX](https://github.com/released/Sample_Project_RH850_S1_UART1_TX_RX)
 
+[Sample_Project_RH850_S1_UART_TX_DMA_RX_interrupt](https://github.com/released/Sample_Project_RH850_S1_UART_TX_DMA_RX_interrupt)
+
+
 ![](img/slide_extend_RH850123.png)
 
 ![](img/slide_extend_RH850124.png)
