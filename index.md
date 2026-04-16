@@ -759,11 +759,13 @@ R_Config_CSIH0_Start();
 
 ---
 
+[Sample_Project_RH850_S1_UART_TX_DMA_RX_interrupt](https://github.com/released/Sample_Project_RH850_S1_UART_TX_DMA_RX_interrupt)
+
+[Sample_Project_RH850_S1_UART_TX_RX_DMA](https://github.com/released/Sample_Project_RH850_S1_UART_TX_RX_DMA)
+
 [Sample_Project_RH850_S1_UART_printf](https://github.com/released/Sample_Project_RH850_S1_UART_printf)
 
 [Sample_Project_RH850_S1_UART1_TX_RX](https://github.com/released/Sample_Project_RH850_S1_UART1_TX_RX)
-
-[Sample_Project_RH850_S1_UART_TX_DMA_RX_interrupt](https://github.com/released/Sample_Project_RH850_S1_UART_TX_DMA_RX_interrupt)
 
 
 ![](img/slide_extend_RH850123.png)
@@ -892,6 +894,8 @@ R_Config_TAUB0_Start();
 # Smart Config. – ADC
 
 [Sample_Project_RH850_S1_ADC_MultiCh](https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh)
+
+[Sample_Project_RH850_S1_ADC_MultiCh_Polling](https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh_Polling)
 
 ![](img/slide_extend_RH850145.png)
 
