@@ -17,6 +17,9 @@
   * [UART](#article_uart)
   * [PWM](#article_pwm)
   * [ADC](#article_adc)
+  * [Code flash](#article_code_flash)
+  * [Data flash](#article_data_flash)
+  * [CAN FD](#article_can_fd)
 * CS+
   * Code Compiler & programming flow ( from C code to IC ).
 * Tips
@@ -584,8 +587,11 @@ R_Config_INTC_INTP2_Start();
 
 [Sample_Project_RH850_S1_RIIC_I2C_Master](https://github.com/released/Sample_Project_RH850_S1_RIIC_I2C_Master)
 
-
 [Sample_Project_RH850_S1_RIIC_I2C_Slave](https://github.com/released/Sample_Project_RH850_S1_RIIC_I2C_Slave)
+
+[Sample_Project_RH850_S1_I2C_Master_Slave](https://github.com/released/Sample_Project_RH850_S1_I2C_Master_Slave)
+
+[Sample_Project_RH850_S1_RIIC_I2C_Slave_Master_combination](https://github.com/released/Sample_Project_RH850_S1_RIIC_I2C_Slave_Master_combination)
 
 
 ![](img/slide_extend_RH85094.png)
@@ -832,7 +838,10 @@ R_Config_UART0_Start();
 ---
 
 [Sample_Project_RH850_S1_PWM_MultiCh](https://github.com/released/Sample_Project_RH850_S1_PWM_MultiCh)
+
 [Sample_Project_RH850_S1_Input_Capture](https://github.com/released/Sample_Project_RH850_S1_Input_Capture)
+
+[Sample_Project_RH850_S1_PWM_Input_Capture](https://github.com/released/Sample_Project_RH850_S1_PWM_Input_Capture)
 
 
 ![](img/slide_extend_RH850135.png)
@@ -903,6 +912,9 @@ R_Config_TAUB0_Start();
 
 [Sample_Project_RH850_S1_ADC_MultiCh_Polling](https://github.com/released/Sample_Project_RH850_S1_ADC_MultiCh_Polling)
 
+[Sample_Project_RH850_S1_ADC_Self_Diagnostic](https://github.com/released/Sample_Project_RH850_S1_ADC_Self_Diagnostic)
+
+
 ![](img/slide_extend_RH850145.png)
 
 ![](img/slide_extend_RH850146.png)
@@ -929,6 +941,39 @@ R_Config_ADCA0_ScanGroup1_OperationOn();
 ![](img/slide_extend_RH850148.png)
 
 <u>RH850 Smart Configurator User's Guide: CS+</u>
+[back to top](#article_top)    
+
+---
+
+<a id="article_code_flash"></a>
+
+# Example : Code flash
+
+[Sample_Project_RH850_S1_Code_Flash](https://github.com/released/Sample_Project_RH850_S1_Code_Flash)
+
+
+[back to top](#article_top)    
+
+---
+
+<a id="article_data_flash"></a>
+
+# Example : Data flash
+
+[Sample_Project_RH850_S1_Data_Flash](https://github.com/released/Sample_Project_RH850_S1_Data_Flash)
+
+
+[back to top](#article_top)    
+
+---
+
+<a id="article_can_fd"></a>
+
+# Example : CAN FD sample code
+
+[notice_RH850_RL78_CAN](https://released.github.io/faq_renesas/#notice_RH850_RL78_CAN)
+
+
 [back to top](#article_top)    
 
 ---
