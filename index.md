@@ -7,13 +7,13 @@
 
 > 以 Renesas RH850 為核心，整理 CS+、CC-RH、Smart Configurator、Flash Programmer，以及 timer、通訊介面、Flash 與 CAN FD 的完整實作路徑。
 
-## 學習目標
+## 內容範圍
 
 - 了解 RH850 toolchain、專案結構與 code generation 流程。
 - 能設定 clock、pin、interrupt 與常用周邊，並把產生的 driver 整合到應用程式。
 - 能從 memory、register、interrupt flag 與實際通訊資料定位問題。
 
-## 學習路徑
+## 主題關聯
 
 ```mermaid
 flowchart LR
@@ -25,7 +25,7 @@ flowchart LR
     CAN --> VERIFY["Build / Program / Debug"]
 ```
 
-## 教材目錄
+## 內容索引
 
 * IDE 開發工具的安裝&介紹
   * CS+ , e² studio , CCRH , CCRL , Smart Configurator , Renesas Flash programmer
